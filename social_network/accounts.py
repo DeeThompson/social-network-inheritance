@@ -1,30 +1,27 @@
-
 class User(object):
     def __init__(self, first_name, last_name, email):
-        pass
 
-        Class User(object):
-            def __init__(self, Tim_name, Smith_name, Tim@rmotr.com)
-            
-            self.Tim= name
-                self.first=Tim
-                self.last= Smith
-                self.email= Tim@rmotr.com
-                
-                self.posts = []
-            self.following = []
+        self.first_name= first_name
+        self.last_name= last_name
+        self.email= email
+
+        self.posts = []
+        self.following = []
 
     def add_post(self, post):
-        pass
-      post.set_user(self)
+
+        post.set_user(self)
         self.posts.append(post)
 
     def get_timeline(self):
-        pass
 
-    total_posts = []
+        total_posts = []
+        
+        for user in self.following:
+            total_posts += user.posts
+
+        return sorted(total_posts, key=lambda post: post.timestamp)
     
     def follow(self, other):
-        pass
-    
-        follow=[]
+        self.following.append(other)
+        
